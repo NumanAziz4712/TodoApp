@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodosApp</title>
+</head>
+<body>
+    {% block content %}
+    
+    
+    <hr>
+   <h1>
+     Welcome To Your Dashboard {{request.user.username.title}}
+
+   </h1>
+   {% if request.user.is_authenticated %}
+   <a href="{% url 'log-out' %}">LogOut</a>
+   {% else %}
+   <a href="{% url 'login' %}">login</a>
+   {% endif %}
+    <hr>
+    <br>
+    <br>
+    {% include 'create-todos.html' %}
+
+    {% if todos %}
+        <h1>Total todo: {{todos.count}}</h1>
+        <hr>
+        {% for todo in todos %}
+      
+            <h3>{{todo.name}}</h3>
+            <p>{{todo.created | timesince}} Ago</p>
+            <a href="{% url 'updatetodo' todo.id %}">Edit</a>
+            <a href="{% url 'delete-todo' todo.id %}">delete</a>
+            <a href="{% url 'complete-todo' todo.id %}">Completed</a>
+            
+            {% endfor %}
+          
+            
+            <br>
+            <br>
+            <hr>
+            <h1>Completed Todos: {{completed_todos_count}}</h1>
+            <hr>
+            {% for todo in completed_todos %}
+            <div>
+                <h3>{{todo.name}}</h3>
+                <p>{{todo.updated | timesince}} Ago</p>
+                <a href="{% url 'undocomplete-todo' todo.id %}">Mark Incomplete</a>
+                
+            </div>
+            {% endfor %}
+            {% else %}
+            <h2>Start Creating Todo list For Today</h2>
+           {% endif %}
+            {% endblock %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% block content %}
+{% if page == 'signup' %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {% for form in userForm %}
+    <div>
+        {{form.label}}
+    </div>
+    <div>
+        {{form}}
+    </div>
+
+    {% endfor %}
+    <input type="submit" value="Signup">
+</form>
+
+<h2>
+    <h2>Already have account? <a href="{% url 'login' %}">Login</a></h2>
+</h2>
+{% else %}
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Login">
+</form>
+<h2>Have no Account? <a href="{% url 'signup' %}">Signup</a></h2>
+{% endif %}
+{% endblock %}

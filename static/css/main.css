@@ -1,0 +1,329 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* ---- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+
+- Font sizes (px)
+10 / 12 /14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+html {
+    font-size: 62.5%;
+}
+/* color: #212121 */
+body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1;
+    font-weight: 300;
+    color: #c9d1d9;
+    background-color: #121212;
+}
+.container {
+    max-width: 80rem;
+    margin: 4.8rem auto;
+    padding: 3.2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 3.2rem;
+    align-items: start;
+    position: relative;
+}
+.add-todos,
+
+.side-bar {
+  background-color: rgb(45, 49, 49);
+  border-radius: 5px;
+}
+/* ---------------------------- */
+.add-todos {
+    padding: 2rem;
+    grid-column: 1 / -1 ;
+    font-size: 2rem;
+}
+.todo-form{
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    
+}
+.create-todo input {
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    color: #c9d1d9;
+    background-color: #212121;
+    border: none;
+    border-radius: .5rem;
+    width: 100%;
+}
+.submit-todo input{
+    color: #eef2f7;
+    padding: 1.2rem;
+    border-radius: .5rem;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background-color: #1bd6434b;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+/* .main-content{
+    
+} */
+.todo-text-box {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    padding: 2rem;
+    background-color: rgb(45, 49, 49);
+    margin-bottom: 2.4rem;
+
+}
+.actions{
+    
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.actions a {
+    text-decoration: none;
+    color: rgb(212, 211, 211);
+    font-size: 1.6rem;
+}
+.todo-text{
+    font-size: 1.8rem;
+    line-height: 1.6;
+
+}
+.completed-todos p,
+.no-todos{
+font-size: 2rem;
+font-weight: 500;
+color: #beb9b9;
+display: flex;
+align-items: center;
+/* justify-content: center; */
+gap: 1.5rem;
+
+}
+.total-todos {
+    border-bottom: 1px solid rgba(206, 27, 27, 0.205);
+    padding-bottom: 1rem;
+    padding: 2rem;
+    background-color: rgba(255, 0, 0, 0.103);
+}
+.completed-todos span,
+.no-todos span {
+ font-size: 3.6rem;
+ font-weight: 600;
+ /* color: #e7e0e0c0; */
+}
+.completed-todos__box{
+    padding: 2rem;
+    background-color: #1bd64313;
+}
+.completed-todos{
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(245, 231, 231, 0.205);
+}
+
+/* icons */
+.todo-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    
+}
+.completed-todos__list{
+    
+    list-style: none;
+    
+}
+.completed-todo__item .todo-icon {
+    width: 2rem;
+    height: 2rem;
+    stroke: #eef2f7de;
+}
+.completed-todo__item{
+    display: flex;
+    justify-content: space-between;
+    gap: .8rem;
+    align-items: flex-start;
+    flex-direction: start;
+    margin: 1.2rem 0;
+    flex-grow: 1;
+}
+.completed-todo__text{
+    font-size: 1.6rem;
+    line-height: 1.3;
+}
+
+.user{
+    font-size: 2.4rem;
+}
+.user span {
+    text-transform: uppercase;
+    
+    font-weight: 600;
+}
+.message{
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+/* header */
+header {
+    background-color: #fcfcfc21;
+    
+    
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 2.4rem 3.2rem;
+}
+.logout a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #eef2f7;
+    background-color: #eb2e2ea8;
+    border-radius: 5px;
+}
+
+
+/* ############################## */
+/* user login/signup */
+/* ############################## */
+
+.login-form {
+    max-width: 40rem;
+    margin: 10rem auto 0 auto;
+    border: 1px solid rgba(145, 145, 145, 0.582);
+    padding: 4.5rem 4rem;
+    border-radius: 3px;
+}
+.sign-up{
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 1.6rem;
+    margin-bottom: 3.2rem;
+}
+.login input {
+    padding: .8rem 1.6rem;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    background-color: #484948ad;
+    color: #fff;
+    border: none;
+    /* outline: none; */
+    width: 100%;
+    
+}
+
+.login input::placeholder {
+    color: #3f3e3e7c;
+}
+.password-field input,
+.username-field input {
+width: 100%;
+background-color: #55525269;
+}
+.redirect-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.redirect-user p {
+font-size: 1.6rem;
+}
+.redirect-user a:link, 
+.redirect-user a:visited {
+font-size: 2.4rem;
+font-weight: bold;
+text-decoration: none;
+color: #fff;
+transition: all .2s;
+}
+.redirect-user a:hover, 
+.redirect-user a:active {
+
+color: rgba(33, 199, 69, 0.466);
+}
+.signupuser input,
+.signup-user input {
+    background-color: #3fdb3f65;
+    cursor: pointer;
+}
+.signup-user {
+    margin-top: 2rem;
+    margin-bottom: -.8rem;
+}
+label {
+    font-size: 1.6rem;
+    color: #fff;
+}
+.signupuser {
+    margin-top: 1.6rem;
+}
+.create-your-todos {
+    font-size: 2.4rem;
+    color: #696767b7;
+}
+.designed-by {
+    max-width: 40rem;
+    margin: 4rem auto;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+}
+.developer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.developer p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+}
+.developer span {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #fff;
+
+}
+.icon {
+    font-size: 2.4rem;
+    color: #fff;
+    transition: all .2s;
+    border-radius: 50%;
+}
+.icon:hover,
+.icon:active {
+
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.411);
+}

@@ -34,11 +34,11 @@ def homePage(request):
         }
     else:
         return redirect('login')
-    return render(request, 'main.html', context)
+    return render(request, 'todos.html', context)
 
 # updating todos
 def updateTodos(request, pk):
-    update = 'update'
+    page = 'update'
     todo = Todos.objects.get(id=pk)
     form = TodosForm(instance=todo)
     if request.method == 'POST':
@@ -50,9 +50,9 @@ def updateTodos(request, pk):
 
     context = {
         'form':form,
-        'update':update,
+        'page':page,
     }
-    return render(request, 'create-todos.html', context)
+    return render(request, 'todos.html', context)
 def deleteTodo(request, pk):
     todo = Todos.objects.get(id=pk)
     

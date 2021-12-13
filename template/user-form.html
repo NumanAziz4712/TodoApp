@@ -1,29 +1,74 @@
+{%  extends 'main.html' %}
+{% load static %}
+
 {% block content %}
+
+    
 {% if page == 'signup' %}
-<form action="" method="POST">
+<div class="login-form ">
+    <h1 class="sign-up">Sign Up</h1>
+<form class="login" action="" method="POST">
     {% csrf_token %}
     {% for form in userForm %}
+    
     <div>
-        {{form.label}}
+        <label>
+
+            {{form.label}}
+        </label>
     </div>
-    <div>
-        {{form}}
+    <div class="field">
+       {{form}}
     </div>
 
     {% endfor %}
-    <input type="submit" value="Signup">
-</form>
+    <div class="signup-user">
 
-<h2>
-    <h2>Already have account? <a href="{% url 'login' %}">Login</a></h2>
-</h2>
-{% else %}
-<form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="username">
-    <input type="password" name="password">
-    <input type="submit" value="Login">
+        <input  type="submit" value="Signup">
+    </div>
 </form>
-<h2>Have no Account? <a href="{% url 'signup' %}">Signup</a></h2>
+<div class="redirect-user">
+
+    <p>Already have an account?</p> <a href="{% url 'login' %}">Login</a>
+</div>
+</div>
+{% else %}
+
+
+<div class="login-form">
+<h1 class="sign-up">
+    Login
+</h1>
+<form class="login" action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+   <div class="username-field">
+    <input type="text" placeholder="Username" name="username">
+   </div>
+    <div class="password-field">
+        <input type="password" placeholder="Password" name="password">
+    </div>
+   
+    <div class="signupuser">
+
+        <input type="submit" value="Login">
+    </div>
+    
+</form>
+<div class="redirect-user">
+    <p>Have no account ?</p> <a href="{% url 'signup' %}">Signup</a>
+    
+</div>
+
+</div>
+<div class="designed-by">
+    <div class="developer">
+        <p>Developed by:</p> <span>Numan Aziz</span>
+
+    </div>
+        
+        <a href="https://github.com/NumanAziz4712/"><ion-icon class="icon" name="logo-github"></ion-icon></a> 
+</div>
 {% endif %}
+
+
 {% endblock %}

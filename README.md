@@ -9,6 +9,8 @@ This TodoApp allows you to create account, add the todos dynamically and the mar
 ### Sign Up Page
 
 > **Note**: The **Password** should be atleast 8 characters.
+
+
 ![image-20211213212218175](https://user-images.githubusercontent.com/31775953/145855465-87188375-d6ef-457b-8e26-19b59f02a628.png)
  
 

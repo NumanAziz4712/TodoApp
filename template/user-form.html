@@ -5,6 +5,13 @@
 
     
 {% if page == 'signup' %}
+<div class="alert">
+
+    <p>
+        Password should be 8 characters minimum 
+    </p>
+  
+</div>
 <div class="login-form ">
     <h1 class="sign-up">Sign Up</h1>
 <form class="login" action="" method="POST">
@@ -35,7 +42,7 @@
 {% else %}
 
 
-<div class="login-form">
+<div class="login-form login-page">
 <h1 class="sign-up">
     Login
 </h1>
@@ -70,5 +77,13 @@
 </div>
 {% endif %}
 
-
+<script>
+    const alert = document.querySelector('.alert');
+    setTimeout( () => {
+    
+            alert.style.opacity='0';
+       
+    }, 5000)
+    
+</script>
 {% endblock %}

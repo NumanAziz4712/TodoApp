@@ -3,13 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-/* ---- SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
 
-
-- Font sizes (px)
-10 / 12 /14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-*/
 
 html {
     font-size: 62.5%;
@@ -211,7 +205,7 @@ header {
 
 .login-form {
     max-width: 40rem;
-    margin: 10rem auto 0 auto;
+    margin: 1.5rem auto 0 auto;
     border: 1px solid rgba(145, 145, 145, 0.582);
     padding: 4.5rem 4rem;
     border-radius: 3px;
@@ -295,7 +289,8 @@ label {
     margin: 4rem auto;
     padding: 0 4rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2rem;
     align-items: center;
   
 }
@@ -326,4 +321,22 @@ label {
 .icon:active {
 
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.411);
+}
+.alert {
+    max-width: 40rem;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem auto 0 auto;
+    padding: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: #f1540bf1;
+    opacity: 1;
+    border-radius: 3px;
+}
+.login-page{
+    margin-top: 8rem;
 }

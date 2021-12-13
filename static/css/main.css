@@ -236,7 +236,7 @@ header {
 }
 
 .login input::placeholder {
-    color: #3f3e3e7c;
+    color: #f1f1f1a2;
 }
 .password-field input,
 .username-field input {
